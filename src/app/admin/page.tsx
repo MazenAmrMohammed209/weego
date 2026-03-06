@@ -1,4 +1,4 @@
-import { DollarSign, Users, CalendarCheck, PlaneTakeoff } from "lucide-react";
+import { DollarSign, Users, CalendarCheck, Bus } from "lucide-react";
 
 export const metadata = {
   title: "Admin Dashboard | WEEGO",
@@ -9,7 +9,7 @@ const stats = [
   { title: "Total Revenue", value: "$124,500", icon: DollarSign, trend: "+12.5%" },
   { title: "Active Users", value: "8,234", icon: Users, trend: "+4.2%" },
   { title: "New Bookings", value: "142", icon: CalendarCheck, trend: "+18.1%" },
-  { title: "Flights Today", value: "37", icon: PlaneTakeoff, trend: "-2.4%" },
+  { title: "Trips Today", value: "37", icon: Bus, trend: "-2.4%" },
 ];
 
 export default function AdminDashboardPage() {

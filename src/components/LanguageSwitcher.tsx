@@ -1,19 +1,14 @@
 "use client";
 
 import { Globe } from "lucide-react";
-import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function LanguageSwitcher() {
-  const [lang, setLang] = useState<"EN" | "AR">("EN");
+  const { lang, setLang } = useLanguage();
 
   const toggleLang = () => {
-    const newLang = lang === "EN" ? "AR" : "EN";
+    const newLang = lang === "en" ? "ar" : "en";
     setLang(newLang);
-    // In a real app this would trigger routing or context change
-    // For skeletal layout testing we can toggle the html dir attribute
-    if (typeof document !== "undefined") {
-      document.documentElement.dir = newLang === "AR" ? "rtl" : "ltr";
-    }
   };
 
   return (
@@ -23,7 +18,7 @@ export function LanguageSwitcher() {
       aria-label="Toggle Language"
     >
       <Globe className="h-4 w-4" />
-      <span>{lang}</span>
+      <span className="uppercase">{lang}</span>
     </button>
   );
 }
