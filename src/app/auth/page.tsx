@@ -71,7 +71,7 @@ function AuthForm() {
       // Mock admin login condition
       if (email === "admin@weego.com" && password === "admin123") {
         login("admin@weego.com", "Admin Weego", "admin");
-        router.push("/admin");
+        router.push("/");
       } else if (isLogin) {
         // Mock standard login
         if (password === "password123") {

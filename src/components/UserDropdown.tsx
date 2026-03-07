@@ -5,11 +5,13 @@ import { User, LogOut, Settings, LayoutDashboard, CalendarFold } from "lucide-re
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function UserDropdown() {
   const [isOpen, setIsOpen] = React.useState(false);
   const dropdownRef = React.useRef<HTMLDivElement>(null);
   const { user, logout } = useAuth();
+  const { t } = useLanguage();
   const router = useRouter();
 
   React.useEffect(() => {
@@ -56,7 +58,7 @@ export function UserDropdown() {
                   onClick={() => setIsOpen(false)}
                 >
                   <LayoutDashboard className="h-4 w-4" />
-                  <span>Admin Dashboard</span>
+                  <span>{t("dashboard.menu.adminDashboard")}</span>
                 </Link>
               )}
               
@@ -66,25 +68,16 @@ export function UserDropdown() {
                 onClick={() => setIsOpen(false)}
               >
                 <User className="h-4 w-4" />
-                <span>Dashboard</span>
+                <span>{t("dashboard.menu.overview")}</span>
               </Link>
               
               <Link
-                href="/bookings"
+                href="/dashboard"
                 className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent/10 hover:text-accent focus:bg-accent/10 outline-none"
                 onClick={() => setIsOpen(false)}
               >
                 <CalendarFold className="h-4 w-4" />
-                <span>My Bookings</span>
-              </Link>
-
-              <Link
-                href="/settings"
-                className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent/10 hover:text-accent focus:bg-accent/10 outline-none"
-                onClick={() => setIsOpen(false)}
-              >
-                <Settings className="h-4 w-4" />
-                <span>Settings</span>
+                <span>{t("dashboard.menu.myBookings")}</span>
               </Link>
               
               <div className="my-1 h-px bg-border/50" />
@@ -94,7 +87,7 @@ export function UserDropdown() {
                 onClick={handleLogout}
               >
                 <LogOut className="h-4 w-4" />
-                <span>Log out</span>
+                <span>{t("dashboard.menu.logout")}</span>
               </button>
             </div>
           </div>

@@ -375,5 +375,57 @@
       "incorrectCredentials": "Incorrect email or password."
     },
     "hint": "Hint: Use admin@weego.com / admin123 for Admin Dashboard."
+  },
+  "dashboard": {
+    "welcome": "Welcome back, ",
+    "upcomingTrips": "You have {count} upcoming trips.",
+    "planTrip": "Plan Your Trip",
+    "stats": {
+      "totalTrips": { "title": "Total Trips", "desc": "Completed journeys" },
+      "upcomingTrips": { "title": "Upcoming Trips", "desc": "Scheduled rides" },
+      "savedDestinations": { "title": "Saved Destinations", "desc": "Favorite places" },
+      "loyaltyPoints": { "title": "Loyalty Points", "desc": "Available for rewards" }
+    },
+    "recentTrips": {
+      "title": "Recent Trips",
+      "viewAll": "View All",
+      "columns": {
+        "destination": "Destination",
+        "date": "Date",
+        "vehicle": "Vehicle Type",
+        "status": "Status"
+      },
+      "statusUpcoming": "Upcoming",
+      "statusCompleted": "Completed",
+      "dest1": "Cairo International (CAI)",
+      "dest2": "Sharm El Sheikh Gateway",
+      "dest3": "Heliopolis Palace",
+      "vehicle1": "S-Class Sedan",
+      "vehicle2": "Standard Premium",
+      "vehicle3": "Executive SUV",
+      "date1": "Oct 15, 2026",
+      "date2": "Sep 02, 2026",
+      "date3": "Aug 18, 2026"
+    },
+    "referral": {
+      "title1": "Invite Friends & ",
+      "title2": "Earn Rewards",
+      "desc": "Share your referral code with friends. When they complete their first trip, you both earn bonus points.",
+      "copy": "Copy Referral Code"
+    },
+    "achievements": {
+      "title": "Your Achievements",
+      "a1": { "name": "First Trip", "desc": "Completed your first ride" },
+      "a2": { "name": "Frequent Traveler", "desc": "Completed 10 rides" },
+      "a3": { "name": "Social Traveler", "desc": "Referred 3 friends" },
+      "a4": { "name": "Elite Member", "desc": "Reached Gold Tier" },
+      "a5": { "name": "Big Spender", "desc": "Earned 20,000 points" }
+    },
+    "menu": {
+      "overview": "Overview",
+      "adminDashboard": "Admin Dashboard",
+      "myBookings": "My Bookings",
+      "logout": "Log out"
+    }
   }
 }

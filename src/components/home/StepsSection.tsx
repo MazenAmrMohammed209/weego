@@ -30,10 +30,10 @@ export function StepsSection() {
   return (
     <section className="flex flex-col w-full">
       {/* Steps Section */}
-      <div className="bg-bg-dark pt-32 pb-40 relative overflow-hidden">
+      <div className="bg-bg-light dark:bg-bg-dark pt-32 pb-40 relative overflow-hidden">
         {/* Subtle Background Glows */}
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/10 dark:bg-primary/20 rounded-full blur-[150px] pointer-events-none" />
 
         <div className="container-base relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-28">
@@ -42,17 +42,17 @@ export function StepsSection() {
               {t("steps.badge")}
               <span className="h-px w-8 bg-accent/50"></span>
             </h3>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mb-8">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-foreground dark:text-white mb-8">
               {t("steps.title")}
             </h2>
-            <p className="text-xl text-white/60 font-medium">
+            <p className="text-xl text-foreground/70 dark:text-white/60 font-medium">
               {t("steps.description")}
             </p>
           </div>
 
           <div className="relative max-w-4xl mx-auto">
             {/* Connecting Line - desktop only */}
-            <div className="hidden md:block absolute top-[44px] left-[15%] right-[15%] h-[2px] bg-white/5" />
+            <div className="hidden md:block absolute top-[44px] left-[15%] right-[15%] h-[2px] bg-border dark:bg-white/5" />
             
             <div className="grid md:grid-cols-3 gap-16 md:gap-8 relative">
               {steps.map((step, idx) => (
@@ -74,7 +74,7 @@ export function StepsSection() {
                   </div>
                   
                   {/* Step Title */}
-                  <h4 className="text-2xl font-bold text-white tracking-wide">{step.title}</h4>
+                  <h4 className="text-2xl font-bold text-foreground dark:text-white tracking-wide">{step.title}</h4>
                 </div>
               ))}
             </div>
@@ -84,15 +84,15 @@ export function StepsSection() {
           <div className="mt-24 flex justify-center animate-in slide-in-from-bottom-8 fade-in duration-1000 delay-500 fill-mode-both">
             <a 
               href="/services" 
-              className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-primary/40 border border-white/10 rounded-full hover:bg-primary hover:border-accent/50 hover:shadow-[0_0_30px_rgba(182,255,10,0.15)] overflow-hidden"
+              className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-foreground dark:text-white transition-all duration-300 bg-primary/10 dark:bg-primary/40 border border-border dark:border-white/10 rounded-full hover:bg-primary hover:text-primary-foreground hover:border-accent/50 hover:shadow-[0_0_30px_rgba(182,255,10,0.15)] overflow-hidden"
             >
               {/* Button background effect */}
-              <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+              <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-10 dark:opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
               
               {/* Hover sweep effect */}
-              <span className="absolute top-0 left-0 w-full h-full -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent"></span>
+              <span className="absolute top-0 left-0 w-full h-full -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-foreground/10 dark:via-white/10 to-transparent"></span>
               
-              <span className="relative text-lg tracking-[0.15em] uppercase text-white group-hover:text-accent transition-colors duration-300">
+              <span className="relative text-lg tracking-[0.15em] uppercase text-foreground dark:text-white group-hover:text-primary-foreground dark:group-hover:text-accent transition-colors duration-300">
                 {t("steps.cta")}
               </span>
             </a>
