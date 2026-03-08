@@ -1,84 +1,88 @@
 "use client";
 
-import { PlaneLanding, MapPin, Clock4, ShieldCheck } from "lucide-react";
+import { Plane, Clock4, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function AirportTransfers() {
+  const { t } = useLanguage();
+  
+  const features = [
+    { icon: Plane, text: t("airportTransfers.features.tracking") },
+    { icon: Clock4, text: t("airportTransfers.features.wait") },
+    { icon: ShieldCheck, text: t("airportTransfers.features.drivers") },
+  ];
+
   return (
-    <section className="py-24 bg-bg-light dark:bg-bg-dark border-t border-border">
-      <div className="container-base">
-        <div className="bg-background border border-border rounded-[2.5rem] p-10 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center gap-16 shadow-xl">
-           
-           {/* Abstract Map Background */}
-           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-background to-background opacity-50 pointer-events-none" />
-           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
+    <section className="py-24 bg-bg-light dark:bg-bg-dark border-y border-border overflow-hidden">
+      <div className="container-base grid lg:grid-cols-2 gap-16 items-center">
+        
+        {/* Left Side: Text Information */}
+        <div className="order-2 lg:order-1 animate-in slide-in-from-left-8 fade-in duration-700">
+          <h2 className="text-sm font-bold tracking-widest text-accent uppercase mb-3">
+            {t("airportTransfers.home.badge")}
+          </h2>
+          <h3 className="text-4xl font-extrabold tracking-tight text-primary dark:text-primary-foreground sm:text-5xl mb-6 leading-tight">
+            {t("airportTransfers.home.title")}
+          </h3>
+          <p className="text-lg text-foreground/70 mb-10 leading-relaxed max-w-lg">
+            {t("airportTransfers.home.description")}
+          </p>
 
-           <div 
-              className="w-full lg:w-1/2 relative z-10 animate-in zoom-in-95 fade-in duration-700"
-           >
-              <div className="relative aspect-video rounded-3xl overflow-hidden border border-border bg-bg-light dark:bg-bg-dark flex items-center justify-center group shadow-2xl">
-                 <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                 
-                 {/* Visual Interface Mockup */}
-                 <div className="w-[80%] bg-background rounded-2xl border border-border p-5 shadow-lg relative z-10 transform translate-y-4 group-hover:-translate-y-2 transition-transform duration-700">
-                    <div className="flex items-center gap-4 border-b border-border/50 pb-4 mb-4">
-                       <div className="h-10 w-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
-                          <PlaneLanding className="h-5 w-5" />
-                       </div>
-                       <div>
-                          <p className="text-xs text-foreground/50 font-medium">JFK International</p>
-                          <p className="text-sm font-bold text-foreground">Flight BA117 Landed</p>
-                       </div>
-                       <div className="ml-auto text-right">
-                          <p className="text-xs text-foreground/50 font-medium">Pickup in</p>
-                          <p className="text-sm font-bold text-accent">05:00 min</p>
-                       </div>
-                    </div>
-                    <div className="flex gap-4">
-                       <MapPin className="h-5 w-5 text-foreground/40 mt-1" />
-                       <div>
-                          <p className="text-sm font-bold text-foreground">Terminal 4, Arrival Gate B</p>
-                          <p className="text-xs text-foreground/60">Chauffeur: Michael (Black S-Class)</p>
-                       </div>
-                    </div>
-                 </div>
+          <div className="grid sm:grid-cols-2 gap-6 mb-12">
+            {features.map((feat, idx) => (
+              <div key={idx} className="flex items-center gap-4">
+                <div className="h-12 w-12 bg-background border border-border flex items-center justify-center shrink-0 rounded-xl shadow-sm text-accent">
+                  <feat.icon className="w-5 h-5" />
+                </div>
+                <span className="text-sm font-bold text-foreground">
+                  {feat.text}
+                </span>
               </div>
-           </div>
+            ))}
+          </div>
 
-           <div 
-              className="w-full lg:w-1/2 relative z-10 animate-in slide-in-from-right-8 fade-in duration-700 delay-200 fill-mode-both"
-           >
-              <h2 className="text-sm font-bold tracking-widest text-accent uppercase mb-3 text-center lg:text-left">
-                 Seamless Arrivals
-              </h2>
-              <h3 className="text-4xl font-extrabold tracking-tight text-primary dark:text-primary-foreground sm:text-5xl mb-6 text-center lg:text-left">
-                 VIP Airport <br className="hidden sm:block"/> Transfers.
-              </h3>
-              <p className="text-lg text-foreground/70 mb-10 leading-relaxed text-center lg:text-left">
-                 Never wait in a taxi line again. Our integrated flight tracking ensures your chauffeur is waiting for you exactly when you land, adjusting automatically for early arrivals or delays.
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-6 mb-10">
-                 <div className="flex items-center gap-3 bg-bg-light dark:bg-bg-dark p-4 rounded-xl border border-border shrink-0">
-                    <Clock4 className="h-5 w-5 text-accent" />
-                    <span className="text-sm font-semibold text-foreground">60 Min Free Wait Time</span>
-                 </div>
-                 <div className="flex items-center gap-3 bg-bg-light dark:bg-bg-dark p-4 rounded-xl border border-border shrink-0">
-                    <ShieldCheck className="h-5 w-5 text-accent" />
-                    <span className="text-sm font-semibold text-foreground">Meet & Greet Included</span>
-                 </div>
-              </div>
-
-              <div className="text-center lg:text-left">
-                 <Link href="/services">
-                    <button className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-colors shadow-lg active:scale-95 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary">
-                       Book a Transfer
-                    </button>
-                 </Link>
-              </div>
-           </div>
-
+          <Link href="/airport-transfer" className="inline-block">
+            <button className="px-8 py-4 bg-accent text-accent-foreground rounded-full font-bold hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(182,255,10,0.2)] hover:shadow-[0_0_30px_rgba(182,255,10,0.4)] hover:-translate-y-1 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
+              {t("airportTransfers.home.cta")}
+            </button>
+          </Link>
         </div>
+
+        {/* Right Side: Premium Visual */}
+        <div className="order-1 lg:order-2 relative aspect-[4/5] sm:aspect-square lg:aspect-auto lg:h-[650px] w-full rounded-[2.5rem] overflow-hidden group shadow-2xl animate-in slide-in-from-right-8 fade-in duration-700">
+          {/* Abstract dark gradient image acting as our premium scene placeholder */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 to-black/30 z-10" />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=2187&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-110 transition-transform duration-1000" />
+          
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20" />
+
+          {/* Floating Glass Card Over Image */}
+          <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-auto sm:w-[85%] bg-background/80 dark:bg-background/60 backdrop-blur-xl border border-white/20 dark:border-border/50 rounded-2xl p-6 shadow-2xl z-30 transform group-hover:-translate-y-2 transition-transform duration-700">
+            <div className="flex items-start gap-5">
+              <div className="h-14 w-14 bg-accent/20 rounded-full flex items-center justify-center text-accent shrink-0 ring-1 ring-accent/30">
+                <Plane className="h-7 w-7" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-lg font-bold text-foreground dark:text-white">
+                    Flight Tracked
+                  </p>
+                  <span className="text-xs font-bold text-accent bg-accent/10 px-2 py-1 rounded-full">LIVE</span>
+                </div>
+                <p className="text-sm text-foreground/80 dark:text-white/80 font-medium">
+                  We automatically adjust for delays.
+                </p>
+              </div>
+            </div>
+            
+            {/* Animated tracking bar */}
+            <div className="mt-6 w-full h-2 bg-foreground/10 dark:bg-white/10 rounded-full overflow-hidden relative">
+              <div className="absolute top-0 left-0 bottom-0 w-2/3 bg-accent rounded-full animate-[pulse_2s_ease-in-out_infinite] shadow-[0_0_10px_rgba(182,255,10,0.5)]" />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

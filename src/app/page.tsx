@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { StepsSection } from "@/components/home/StepsSection";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { FleetSection } from "@/components/home/FleetSection";
+import { AirportTransfers } from "@/components/home/AirportTransfers";
 import { RewardsHighlight } from "@/components/home/RewardsHighlight";
 import { Testimonials } from "@/components/home/Testimonials";
 import { CTASection } from "@/components/home/CTASection";
@@ -15,8 +16,9 @@ export default function HomePage() {
       <StepsSection />
       <WhyChooseUs />
       <FleetSection />
-      <RewardsHighlight />
+      <AirportTransfers />
       <Testimonials />
+      <RewardsHighlight />
       <CTASection />
     </div>
   );

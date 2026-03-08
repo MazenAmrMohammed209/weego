@@ -42,7 +42,7 @@ export default function DashboardPage() {
           </div>
           <div>
             <Link
-              href="/services"
+              href="/booking"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-accent px-8 text-base font-bold text-accent-foreground shadow-lg transition-transform hover:scale-105"
             >
               {t("dashboard.planTrip")}

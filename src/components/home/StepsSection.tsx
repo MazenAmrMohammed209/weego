@@ -3,6 +3,7 @@
 import { MapPin, CreditCard, Car } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 
 export function StepsSection() {
   const { t } = useLanguage();
@@ -82,8 +83,8 @@ export function StepsSection() {
           
           {/* CTA Button */}
           <div className="mt-24 flex justify-center animate-in slide-in-from-bottom-8 fade-in duration-1000 delay-500 fill-mode-both">
-            <a 
-              href="/services" 
+            <Link 
+              href="/booking" 
               className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-foreground dark:text-white transition-all duration-300 bg-primary/10 dark:bg-primary/40 border border-border dark:border-white/10 rounded-full hover:bg-primary hover:text-primary-foreground hover:border-accent/50 hover:shadow-[0_0_30px_rgba(182,255,10,0.15)] overflow-hidden"
             >
               {/* Button background effect */}
@@ -95,7 +96,7 @@ export function StepsSection() {
               <span className="relative text-lg tracking-[0.15em] uppercase text-foreground dark:text-white group-hover:text-primary-foreground dark:group-hover:text-accent transition-colors duration-300">
                 {t("steps.cta")}
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

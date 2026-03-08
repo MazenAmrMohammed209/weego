@@ -41,6 +41,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const newUser = { email, name, role };
     setUser(newUser);
     localStorage.setItem("weego_user", JSON.stringify(newUser));
+    localStorage.setItem("weego_role", role);
   };
 
   const logout = () => {

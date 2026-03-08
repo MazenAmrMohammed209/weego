@@ -37,15 +37,37 @@
     "pax": "pax",
     "bags": "bags"
   },
-  "airportTransfer": {
-    "title": "Airport Transfers",
-    "description": "Start your trip stress-free. Our professional chauffeurs track your flight, providing a seamless meet-and-greet service at all major Egyptian airports including Cairo International (CAI), Hurghada (HRG), and Sharm El Sheikh (SSH).",
+  "airportTransfers": {
+    "title": "Airport Pickup & Flight Tracking",
+    "description": "Share your flight details and our professional chauffeurs will be ready when you land.",
+    "home": {
+      "badge": "AIRPORT SERVICE",
+      "title": "Airport Pickup Made Simple",
+      "description": "Arriving in Egypt? Send us your flight details and our chauffeurs will be waiting when you land.",
+      "cta": "Plan Airport Pickup"
+    },
     "features": {
-      "wait": "60 Minutes Free Wait Time",
       "tracking": "Flight Tracking",
-      "pricing": "All-Inclusive Pricing",
-      "drivers": "Professional Chauffeurs"
-    }
+      "wait": "Free Waiting Time",
+      "drivers": "Professional Drivers"
+    },
+    "form": {
+      "name": "Passenger Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "airport": "Arrival Airport",
+      "flightNumber": "Flight Number",
+      "arrivalDate": "Arrival Date",
+      "arrivalTime": "Arrival Time",
+      "pax": "Number of Passengers",
+      "luggage": "Number of Luggage",
+      "pickup": "Pickup Location",
+      "dropoff": "Drop-off Location",
+      "uploadLabel": "Upload Flight Ticket (PDF / JPG / PNG)",
+      "uploadSupported": "Supported formats: PDF, JPG, PNG",
+      "submit": "Request Airport Pickup"
+    },
+    "success": "Your airport pickup request has been received. Our team will contact you shortly."
   },
   "about": {
     "title": "About Weego Travel",
@@ -426,6 +448,67 @@
       "adminDashboard": "Admin Dashboard",
       "myBookings": "My Bookings",
       "logout": "Log out"
+    }
+  },
+  "booking": {
+    "title": "Book Your Trip",
+    "steps": {
+      "details": "Trip Details",
+      "vehicle": "Vehicle & Preferences",
+      "review": "Review & Confirm"
+    },
+    "tripType": {
+      "oneWay": "One Way",
+      "roundTrip": "Round Trip",
+      "multiCity": "Multi-City",
+      "hourly": "Hourly"
+    },
+    "form": {
+      "destinationArea": "Destination Area",
+      "dates": "Dates",
+      "pickupDate": "Pickup Date",
+      "returnDate": "Return Date",
+      "time": "Time",
+      "pickupLocation": "Pickup Location",
+      "pickupPlaceholder": "From: e.g. Cairo Airport",
+      "dropoffLocation": "Dropoff Location",
+      "dropoffPlaceholder": "To: e.g. Hilton Hotel",
+      "passengers": "Passengers",
+      "specialRequests": "Special Requests (Optional)",
+      "specialRequestsPlaceholder": "Any special requirements for your trip..."
+    },
+    "vehicleSelection": {
+      "title": "Vehicle Selection",
+      "seats": "seats",
+      "bags": "bags",
+      "startingFrom": "Starting from"
+    },
+    "review": {
+      "title": "Review Booking",
+      "summary": "Booking Summary",
+      "tripType": "Trip Type",
+      "pickup": "Pickup",
+      "dropoff": "Dropoff",
+      "dateTime": "Date & Time",
+      "vehicle": "Vehicle Selected",
+      "passengers": "Passengers",
+      "totalEstimate": "Total Estimate",
+      "baseFare": "Base Fare",
+      "addons": "Add-ons",
+      "total": "Total Price",
+      "priceIncludes": "Price includes:",
+      "includes": {
+        "goReturn": "Go & Return",
+        "waiting": "8 Hours Free Waiting",
+        "driver": "Professional Driver",
+        "fuel": "Fuel Included",
+        "door": "Door-to-Door Service"
+      }
+    },
+    "buttons": {
+      "next": "Next Step",
+      "back": "Back",
+      "confirm": "Confirm Booking"
     }
   }
 }

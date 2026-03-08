@@ -22,7 +22,7 @@ export default function RewardsPage() {
           </div>
           <div className="mt-8 md:mt-0">
             <Link
-              href="/services"
+              href="/booking"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-accent-foreground shadow-sm transition-transform hover:scale-105"
             >
               {t("rewardsPage.bookToEarn")}

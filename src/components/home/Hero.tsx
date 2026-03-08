@@ -35,7 +35,7 @@ export function Hero() {
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <Link href="/services">
+            <Link href="/booking">
               <button
                 className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-accent px-8 text-base font-semibold text-accent-foreground shadow-[0_0_20px_rgba(182,255,10,0.3)] hover:shadow-[0_0_30px_rgba(182,255,10,0.5)] hover:bg-accent/90 hover:scale-105 active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >

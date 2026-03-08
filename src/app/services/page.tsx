@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Users, Briefcase, Snowflake, Check, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import heroImg from "@/app/assets/heroimg.jpg";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -211,10 +212,10 @@ function ServicesContent() {
 
                 <div className="mt-auto">
                    {/* CTA Button */}
-                  <button className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-bold text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                  <Link href="/booking" className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-bold text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
                     {t("fleet.bookNow")}
                     <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:rotate-180" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

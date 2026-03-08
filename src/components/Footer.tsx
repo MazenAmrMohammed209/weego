@@ -5,9 +5,15 @@ import { Mail, Phone, MapPin, Instagram, Facebook, ArrowUp } from "lucide-react"
 import Image from "next/image";
 import iconImg from "@/app/assets/icon.svg";
 import { useLanguage } from "@/context/LanguageContext";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <footer className="w-full bg-background pt-12 pb-6 text-foreground relative z-10">
